@@ -42,6 +42,8 @@
                   </div>
                 </div>
               </div>
+              <form action="addComment" method="post">
+              @csrf
               <div class="u-size-30">
                 <div class="u-layout-row">
                   <div class="u-container-style u-layout-cell u-size-60 u-white u-layout-cell-3">
@@ -51,15 +53,15 @@
                         <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 0px;">
                           <div class="u-form-group u-form-name">
                             <label for="name-513e" class="u-label">Name</label>
-                            <input type="text" placeholder="Neved" id="name-513e" name="name" class="u-border-none u-grey-5 u-input u-input-rectangle" required="">
+                            <input type="text" placeholder="Neved" id="name-513e" name="user_name" class="u-border-none u-grey-5 u-input u-input-rectangle" required="">
                           </div>
                           <div class="u-form-email u-form-group">
                             <label for="email-513e" class="u-label">Email</label>
-                            <input type="email" placeholder="Email cím" id="email-513e" name="email" class="u-border-none u-grey-5 u-input u-input-rectangle" required="">
+                            <input type="email" placeholder="Email cím" id="email-513e" name="user_email" class="u-border-none u-grey-5 u-input u-input-rectangle" required="">
                           </div>
                           <div class="u-form-group u-form-message">
                             <label for="message-513e" class="u-label">Message</label>
-                            <textarea placeholder="A véleményed" rows="4" cols="50" id="message-513e" name="message" class="u-border-none u-grey-5 u-input u-input-rectangle" required=""></textarea>
+                            <textarea placeholder="A véleményed" rows="4" cols="50" id="message-513e" name="user_comment" class="u-border-none u-grey-5 u-input u-input-rectangle" required=""></textarea>
                           </div>
                           <div class="u-align-left u-form-group u-form-submit" style="text-align: center;">
                             <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-hover-palette-2-base u-palette-3-base u-btn-1" style="padding: 15px; border-radius: 5px;">Küldés </a>
@@ -75,6 +77,7 @@
                   </div>
                 </div>
               </div>
+              </form>
             </div>
           </div>
         </div>
