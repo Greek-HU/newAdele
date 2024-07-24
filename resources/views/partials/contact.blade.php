@@ -1,4 +1,7 @@
 <section class="custom-expanded u-clearfix u-palette-4-light-3 u-section-9" id="carousel_6576">
+<a href="#" class="fixedbutton">
+  <i class="bi bi-arrow-up-circle-fill" id="fixedbutton"></i>
+</a>
       <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1" id="contact">
         <div class="u-absolute-hcenter u-expanded-height u-palette-3-base u-shape u-shape-rectangle u-shape-1"></div>
         <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-8 u-layout-wrap u-layout-wrap-1">
