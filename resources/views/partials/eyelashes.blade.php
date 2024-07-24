@@ -45,4 +45,7 @@
           <p class="u-align-center u-text u-text-palette-4-base u-text-30">4000 Ft.</p>
         </div>
       </div>
+      <a href="#" class="fixedbutton">
+  <i class="bi bi-arrow-up-circle-fill " id="fixedbutton"></i>
+</a>
     </section>
