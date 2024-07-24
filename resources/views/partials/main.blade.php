@@ -28,6 +28,7 @@
             </div>
         </div>
     </div>
+    
 </section>
 
 <section class="u-align-center u-clearfix u-container-align-left u-palette-3-light-3 u-section-3" id="sec-9730">
@@ -57,10 +58,14 @@
             </div>
         </div>
     </div>
+    <a href="#" class="fixedbutton">
+  <i class="bi bi-arrow-up-circle-fill " id="fixedbutton"></i>
+</a>
 </section>
 @include('partials.nails')
 @include('partials.eyelashes')
 <section class="u-clearfix u-container-align-left u-palette-4-base u-valign-middle u-section-6" id="carousel_297e">
+  
       <div class="data-layout-selected u-clearfix u-gutter-0 u-layout-wrap u-layout-wrap-1">
         <div class="u-layout">
           <div class="u-layout-row">
@@ -112,6 +117,9 @@
           </div>
         </div>
       </div>
+      <a href="#" class="fixedbutton">
+  <i class="bi bi-arrow-up-circle-fill " id="fixedbutton"></i>
+</a>
     </section>
     <section class="u-clearfix u-white u-section-7" id="carousel_eead">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
@@ -143,6 +151,9 @@
           </div>
         </div>
       </div>
+      <a href="#" class="fixedbutton">
+  <i class="bi bi-arrow-up-circle-fill " id="fixedbutton"></i>
+</a>
     </section>
     @include('partials.opinions')
     @include('partials.contact')
