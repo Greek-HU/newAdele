@@ -1,0 +1,78 @@
+.textt{
+	height: 10rem;
+}
+.gallery {
+	display: contents;
+    opacity: 0;
+  	animation: fade-in 1.1s ease-in;
+	padding: 2px;
+}
+.gallery__image {
+	filter: grayscale(1);
+}
+
+.gallery__column {
+	display: inline-block;
+	flex-direction: column;
+	flex: 0 0 auto;
+}
+
+.gallery__link {
+	margin: 2px;
+	overflow: hidden;
+}
+
+.gallery__image:hover {
+	filter: grayscale(0);
+	transform: scale(1.1);
+}
+
+.gallery__caption:hover {
+	opacity: 1;
+}
+
+.gallery__thumb {
+	position: relative;
+}
+.op_img{
+	display: none;
+	position: fixed;
+	z-index: 100;
+	height: 100%;
+	width: 100%;
+	justify-content: center;
+	background-color: rgba(261,236,239, 0.9);
+}
+
+.gallery__image {
+	display: block;
+	width: 100%;
+	transition: .3s;
+}
+
+.gallery__caption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 25px 15px 15px;
+	width: 100%;
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+	color: white;
+	opacity: 0;
+	background: linear-gradient(0deg, rgba(0, 0, 0, .5) 0%, rgba(255, 255, 255, 0) 100%);
+	transition: .3s;
+}
+.gallery__x {
+	position: relative;
+	text-decoration: none;
+	top: 0;
+	left: 0;
+	padding: 25px 15px 15px;
+	width: 100%;
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+	color: red;
+	background: black;
+	transition: .3s;
+}

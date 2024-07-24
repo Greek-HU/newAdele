@@ -1,0 +1,281 @@
+.a{
+    background-color: #E6E46E;
+}
+body{
+    background-color: rgb(255, 220, 186); 
+}
+.logo{
+    display: inline;
+    max-width: 150px;
+}
+.navbar{
+    background: rgb(255,241,218);
+    background: linear-gradient(0deg, rgba(255,241,218,1) 0%, rgba(217,186,130,1) 72%);
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0;
+}
+.navbar a{
+    float: left;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+    text-align: center;
+    padding: 5px 16px;
+    text-decoration: none;
+    margin: 0 15px 0 15px;
+}
+.navbar a:hover{
+    color: #ff921f;
+}
+.nav_links{
+    display: block;
+    width: 72%;
+}
+.nav-dropdown{
+    display: none;
+}
+.box{
+    
+    margin-top: 10px;
+}
+
+.box h1, h2{
+    color: #000000;
+    font-family: 'Bebas Neue', sans-serif;
+    text-align: center;
+    padding: 14px;
+}
+.box p{
+    font-family: 'Pangolin', cursive;
+    letter-spacing: 1.2px;
+    padding: 2px;
+}
+.box .text_box p{
+    width: 80%;
+}
+.text{
+    border-radius: 5px;
+    height: 35rem;
+}
+
+.text_box{
+    margin: 2% 7% 5% 0;
+}
+.typeInput{
+    display: none;
+}
+.priceInput{
+    display: none;
+}
+.services_box table th,
+.services_box tbody td:last-child{
+
+    font-weight: 600;
+}
+.services_box table tr{
+    font-weight: 400;
+}
+thead{
+    background-color:  rgba(255, 193, 7, 0.6);
+}
+.card tbody:first-child{
+    padding-right: 10%;
+}
+.services_box tbody:first-child{
+    margin: 10px;
+}
+.d-table table{
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+.cont_box{ 
+    background-color: rgb(261,236,239);
+    box-shadow: 0px 9px 10px 10px #D9BA82;
+    width: 33%;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.cont_box>ul>li{
+    list-style: none;
+}
+.map
+.form_box{
+    background-color: rgb(237 204 209);
+    width: 35%;
+    border-radius: 10px;
+    margin: auto;    
+}
+form>div{
+    padding: 15px;
+}
+
+.box .cont li{
+    margin: 5px;
+}
+
+.gallery__thumb>img{
+    height: 200px;
+}
+.gallery__column{
+    padding: 20px;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media (max-width: 1650px){
+    .nav_links{
+        width: 68%;
+    }
+    .text{
+        height: 47rem;
+    }
+}
+@media (max-width: 1400px){
+    .nav_links{
+        width: 60%;
+    }
+    .navbar a{
+        padding: 5px 0;
+    }
+    .social_links{
+        margin: 0 10px 0 10px;
+    }
+    .pic_box img {
+        max-width: 290px !important;
+    }
+}
+@media (max-width: 1200px) {
+    .nav_links{
+        width: 47%;
+    }
+    .text{
+        height: 100%;
+    }
+}
+@media (max-width: 850px){
+    .nav_links{
+        display: none;
+        width: 100%;
+    }
+    .social_links{
+        display: none;
+    }
+    .navbar a{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .social_links{
+        margin: 0 auto;
+    }
+    .social_links .row .col a{
+        width: 100%;
+    } 
+    .social_links a{
+        width: 30%;
+        margin: 3px;
+    }
+    .nav-dropdown{
+        display: block;
+        margin: 0 auto;
+    }
+    .logo{
+        margin: 0 auto;
+    }
+    .d-flex{
+        display: block !important;
+    }
+    .text_box {
+        margin: 2% 0% 0% 0%;
+    }
+    .form_box{
+        width: 90%;
+    }
+    .d-table table{
+        display: block;
+        padding: 20px;
+        margin-right: 0;
+    }
+    .table_1{
+        margin-left: 19% !important;
+    }
+    .table_2{
+        margin-left: 13% !important;
+    }
+    .table_3{
+        margin-left: 0 !important;
+    }
+}
+@media (max-width: 700px){
+    .logo{
+        display: none;
+    }
+    .nav_links{
+        display: none !important;
+    }
+    .social_links{
+        display: none !important;
+    }
+    .navbar a{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .row{
+        display: block;
+    }
+    .social_links .links{
+        display: none;
+    }
+    .social_links a{
+        width: 50%;
+        margin: 3px;
+    }
+}
+@media (max-width: 550px){
+    .nav_links{
+        display: none !important;
+    }
+    .social_links{
+        display: none !important;
+    }
+    .navbar a{
+        width: 100%;
+    }
+    .icon{
+        display: block;
+    }
+    .row{
+        justify-content: center;
+    }
+    .cont_box{
+        width: 70%;
+    }
+}
+@media (max-width: 375px){
+    .navbar{
+        width: 90%;
+        margin-bottom: 8px;
+    }
+    
+    .text{
+        margin: 0 15px;
+    }
+    .box{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .wlc_txt{
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .text_box{
+        margin: 40px 0px;
+    }
+}
