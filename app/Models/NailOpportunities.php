@@ -4,16 +4,22 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
-use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 class NailOpportunities extends Model
 {
     protected $table = 'nail_opportunities';
     protected $fillable = [
-        'type',
-        'options',
-        'price',
+        'option',
     ];
-}
+    
 
+    public function Types() : BelongsToMany
+    {
+        return $this->belongsToMany(NailType::class, 'nails_groupment', 'opp_id', 'type_id');
+    }
+
+    public function Prices() : BelongsToMany
+    {
+        return $this->belongsToMany(Price::class,'nails_groupment', 'opp_id', 'price_id');
+    }
+}
