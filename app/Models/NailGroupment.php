@@ -13,7 +13,7 @@ class NailGroupment extends Model
     protected $table = 'nails_groupment';
     protected $fillable = [
         'type_id',
-        'size_id',
+        'opp_id',
         'price_id'
     ];
 
@@ -22,9 +22,9 @@ class NailGroupment extends Model
         return $this->hasOne(NailType::class, 'nails_groupment', 'type_id');
     }
     
-    public function NailSize() : BelongsToMany
+    public function NailOpportunities() : BelongsToMany
     {
-        return $this->belongsToMany(NailSize::class);
+        return $this->belongsToMany(NailOpportunities::class);
     }
 
     public function Price() : BelongsToMany
