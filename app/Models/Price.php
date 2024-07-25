@@ -21,6 +21,6 @@ class Price extends Model
 
     public function Size() : HasOne
     {
-        return $this->hasOne(NailSize::class, 'nails_groupment', 'price_id', 'size_id' );
+        return $this->hasOne(NailSize::class, 'nails_groupment', 'price_id', 'opp_id' );
     }
 }
