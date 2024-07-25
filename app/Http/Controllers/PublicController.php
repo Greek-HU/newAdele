@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
-use App\Models\NailSize;
 use App\Models\NailOpportunities;
+use App\Models\NailSize;
+use App\Models\NailType;
 use App\Models\Pictures;
 use App\Models\Price;
 use App\Models\User;
@@ -17,14 +18,16 @@ class PublicController extends Controller
      */
     public function public()
     {
-    $nailOpportunities = NailOpportunities::all();
+        $nailTypes = NailType::with('opps', 'prices')->get();
+        $nailOpps = NailOpportunities::with('types', 'prices')->get();
+        
 
         $comments = Comment::all();
 
         return view('partials.main', 
         [
-            'nailOpportunities' => $nailOpportunities,
-
+            'nailTypes' => $nailTypes,
+            'nailOpps'   => $nailOpps,
             'comments' => $comments
         ]);
     }
