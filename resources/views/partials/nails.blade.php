@@ -1,11 +1,40 @@
-
 <section class="u-align-center u-clearfix u-palette-4-base u-section-4" id="carousel_277c">
-      <div class="u-clearfix u-sheet u-sheet-1" id="nail">
-        <h2 class="u-align-center u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="0"> Körmös szolgáltatások </h2>
-        <p class="u-align-center u-text u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">21 naptól vagy a szett előkészítését követően 30%-osnál hiányosabb pilla esetén építési ára kerül felszámításra!<br>Az árak 2024.03.01-től érvényesek!
-        </p>
-        @foreach($nailOpportunities as $nailOpportunitie)
-        <div class="u-expanded-width-xs u-list u-list-1">
+  <div class="u-clearfix u-sheet u-sheet-1" id="nail">
+    <h2 class="u-align-center u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="0"> Körmös szolgáltatások </h2>
+    <p class="u-align-center u-text u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">21 naptól vagy a szett előkészítését követően 30%-osnál hiányosabb pilla esetén építési ára kerül felszámításra!<br>Az árak 2024.03.01-től érvényesek!
+    </p>
+    <div class="container">
+    <div class="d-table m-auto mt-5">
+      <div class="d-flex text-center p-3 table-box">
+        @foreach($nailTypes as $Types)
+        <div class="col">
+          <table class="card " style="width: 18rem;">
+            <img src="{{$Types->pic_place}}" class="card-img-top u-image u-image-circle u-image-1" alt="...">
+            <thead class="d-flex justify-content-center">
+              <tr>
+                <th></th>
+                <th class="card-title">{{$Types->type}}</th>
+              </tr>
+            </thead>
+              @foreach($Types->opps as $Opp)
+              <tbody class="shadow p-4 bg-body-primery rounded-bottom d-flex justify-content-center">
+                <tr class="u-align-center">
+                  <td class="u-align-left u-text u-text-palette-4-base px-4">{{$Opp->option}}</td>
+                @foreach($Opp->prices as $Price)
+                <td class="u-align-right u-text u-text-palette-4-base">{{$Price->amount}}</td>
+                @endforeach
+                </tr>
+                
+              </tbody>
+              @endforeach
+            </div>
+          </table>
+        </div>
+        @endforeach
+      </div>
+    </div>
+    </div>
+    <!--div class="u-expanded-width-xs u-list u-list-1">
           <div class="u-repeater u-repeater-1">
             <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
               <div class="u-container-layout u-similar-container u-container-layout-1">
@@ -26,7 +55,7 @@
             <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
               <div class="u-container-layout u-similar-container u-container-layout-2">
                 <div alt="" class="u-image u-image-circle u-image-2"  style="background-image: url(' {{ asset("img/skincare-beauty-female-feet-with-camomile-s-flower_186202-728.jpg") }}')" ;></div>
-                <h4 class="u-align-center u-custom-font u-font-lobster u-text u-text-palette-4-base u-text-14">{{$nailOpportunitie->type}}</h4>
+                <h4 class="u-align-center u-custom-font u-font-lobster u-text u-text-palette-4-base u-text-14"></h4>
                 <p class="u-align-left u-text u-text-palette-4-base u-text-15">6.000 Ft. </p>
                 <p class="u-align-center u-text u-text-palette-4-base u-text-16">S</p>
                 <p class="u-align-center u-text u-text-palette-4-base u-text-17">M </p>
@@ -46,12 +75,13 @@
             <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-3" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
               <div class="u-container-layout u-similar-container u-container-layout-3">
                 <div alt="" class="u-image u-image-circle u-image-3"  style="background-image: url(' {{ asset("img/uyj-min.jpg") }}')" ;></div>
-                <h3 class="u-custom-font u-font-lobster u-text u-text-default u-text-palette-2-base u-text-25">{{$nailOpportunitie->type}}</h3>
+                <h3 class="u-custom-font u-font-lobster u-text u-text-default u-text-palette-2-base u-text-25"></h3>
                 <p class="u-align-left u-text u-text-palette-2-base u-text-26">4.800 Ft.</p>
                 <p class="u-text u-text-default u-text-palette-2-base u-text-27">Gél​lak</p>
                 <p class="u-align-center u-text u-text-palette-2-base u-text-28">Prémium erősített géllakk</p>
                 <p class="u-align-left u-text u-text-palette-2-base u-text-29">4.800 Ft.</p>
-                <h3 class="u-align-left u-custom-font u-font-lobster u-text u-text-default u-text-palette-2-base u-text-30">{{$nailOpportunitie->type}}</h3>
+                <h3 class="u-align-left u-custom-font u-font-lobster u-text u-text-default u-text-palette-2-base u-text-30"></h3>
+                
                 <p class="u-align-left u-text u-text-palette-2-base u-text-31">1.000 Ft./ujj</p>
                 <p class="u-align-left u-text u-text-palette-2-base u-text-32">500 Ft./db</p>
                 <p class="u-align-left u-text u-text-palette-2-base u-text-33">2.000 Ft./szett</p>
@@ -80,9 +110,8 @@
             <p class="u-text u-text-default u-text-palette-2-base u-text-49">3.500 Ft.</p>
           </div>
         </div>
-      </div>
-      @endforeach
-      <a href="#" class="fixedbutton">
-  <i class="bi bi-arrow-up-circle-fill " id="fixedbutton"></i>
-</a>
-    </section>
+      </div-->
+    <a href="#" class="fixedbutton">
+      <i class="bi bi-arrow-up-circle-fill " id="fixedbutton"></i>
+    </a>
+</section>
