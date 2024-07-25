@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('nail_opportunities', function (Blueprint $table) {
+        Schema::create('nail_type', function (Blueprint $table) {
             $table->id();
             $table->string('type');
-            $table->string('options');
-            $table->string('price');
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('nail_opportunities');
+        Schema::dropIfExists('nail_type');
     }
 };
