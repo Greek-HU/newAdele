@@ -18,8 +18,8 @@ class NailOpportunities extends Model
         return $this->belongsToMany(NailType::class, 'nails_groupment', 'opp_id', 'type_id');
     }
 
-    public function Prices() : BelongsToMany
+    public function Sizes() : BelongsToMany
     {
-        return $this->belongsToMany(Price::class,'nails_groupment', 'opp_id', 'price_id');
+        return $this->belongsToMany(Size::class,'nails_groupment', 'opp_id', 'size_id');
     }
 }
