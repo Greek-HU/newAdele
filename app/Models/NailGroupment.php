@@ -14,12 +14,11 @@ class NailGroupment extends Model
     protected $fillable = [
         'type_id',
         'opp_id',
-        'price_id'
     ];
 
-    public function Type() :  HasOne
+    public function Type() :  BelongsToMany
     {
-        return $this->hasOne(NailType::class, 'nails_groupment', 'type_id');
+        return $this->belongsToMany(NailType::class, 'nails_groupment', 'type_id');
     }
     
     public function NailOpportunities() : BelongsToMany
@@ -27,8 +26,4 @@ class NailGroupment extends Model
         return $this->belongsToMany(NailOpportunities::class);
     }
 
-    public function Price() : BelongsToMany
-    {
-        return $this->belongsToMany(Price::class);
-    }
 }
