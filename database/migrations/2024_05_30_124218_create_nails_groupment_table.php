@@ -17,8 +17,7 @@ return new class extends Migration
             $table->foreign('type_id')->references('id')->on('nail_type');
             $table->unsignedBigInteger('opp_id');
             $table->foreign('opp_id')->references('id')->on('nail_opportunities');
-            $table->unsignedBigInteger('price_id');
-            $table->foreign('price_id')->references('id')->on('price');
+
         });
     }
 
