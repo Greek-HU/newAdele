@@ -7,7 +7,7 @@ use App\Models\NailOpportunities;
 use App\Models\NailSize;
 use App\Models\NailType;
 use App\Models\Pictures;
-use App\Models\Price;
+use App\Models\Size;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -18,8 +18,9 @@ class PublicController extends Controller
      */
     public function public()
     {
-        $nailTypes = NailType::with('opps', 'prices')->get();
-        $nailOpps = NailOpportunities::with('types', 'prices')->get();
+        $nailTypes = NailType::with('opps', 'sizes')->get();
+        $nailOpps = NailOpportunities::with('types', 'sizes')->get();
+        $nailType = NailType::all();
         
 
         $comments = Comment::all();
@@ -27,6 +28,8 @@ class PublicController extends Controller
         return view('partials.main', 
         [
             'nailTypes' => $nailTypes,
+            'nailType' => $nailType,
+
             'nailOpps'   => $nailOpps,
             'comments' => $comments
         ]);
