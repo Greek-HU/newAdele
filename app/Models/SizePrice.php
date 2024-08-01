@@ -8,19 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class SizePrice extends Model
 {
     use HasFactory;
-    protected $table = 'size_price';
+    protected $table = 'opp_size';
     protected $fillable = [
+        'opp_size',
         'size_id',
-        'price_id'
     ];
 
-    public function NailSize()
+    public function NailOpportunities()
     {
-        return $this->belongsTo(NailSize::class);
+        return $this->belongsTo(NailOpportunities::class);
     }
 
-    public function price()
+    public function Sizes()
     {
-        return $this->belongsTo(Price::class);
+        return $this->belongsTo(Size::class);
     }
 }
