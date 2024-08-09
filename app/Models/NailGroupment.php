@@ -14,6 +14,8 @@ class NailGroupment extends Model
     protected $fillable = [
         'type_id',
         'opp_id',
+        'size_id',
+        'price_id'
     ];
 
     public function Type() :  BelongsToMany
@@ -24,6 +26,16 @@ class NailGroupment extends Model
     public function NailOpportunities() : BelongsToMany
     {
         return $this->belongsToMany(NailOpportunities::class);
+    }
+
+    public function Sizes() : BelongsToMany
+    {
+        return $this->belongsToMany(Sizes::class);
+    }
+
+    public function Prices() : BelongsToMany
+    {
+        return $this->belongsToMany(Prices::class);
     }
 
 }
