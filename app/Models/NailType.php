@@ -19,7 +19,12 @@ class NailType extends Model
 
     public function Sizes() : BelongsToMany
     {
-        return $this->belongsToMany(Size::class, 'nails_groupment', 'type_id', 'size_id');
+        return $this->belongsToMany(Sizes::class, 'nails_groupment', 'type_id', 'size_id');
+    }
+
+    public function Prices() : BelongsToMany
+    {
+        return $this->belongsToMany(Prices::class, 'nails_groupment', 'type_id', 'price_id');
     }
 }
 
