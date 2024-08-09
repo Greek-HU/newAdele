@@ -7,7 +7,8 @@ use App\Models\NailOpportunities;
 use App\Models\NailSize;
 use App\Models\NailType;
 use App\Models\Pictures;
-use App\Models\Size;
+use App\Models\Sizes;
+use App\Models\Prices;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -18,42 +19,21 @@ class PublicController extends Controller
      */
     public function public()
     {
-        $nailTypes = NailType::with('opps', 'sizes')->get();
-        $nailOpps = NailOpportunities::with('types', 'sizes')->get();
-        $nailType = NailType::all();
         
-
+        $nailTypes = NailType::with('opps', 'sizes', 'prices')->get();
+        $Opps = NailOpportunities::with('prices')->get();
+        $Sizes = Sizes::with('types', 'prices')->get();
+        $Prices = Prices::with('types')->get(); 
         $comments = Comment::all();
 
         return view('partials.main', 
         [
             'nailTypes' => $nailTypes,
-            'nailType' => $nailType,
-
-            'nailOpps'   => $nailOpps,
+            'Opps' => $Opps,
+            'Sizes' => $Sizes,
+            'Prices' => $Prices,
             'comments' => $comments
         ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function nails()
-    {
-        $nailTypes = NailType::all();
-        $nailSizes = NailSize::with('prices')->get();
-        $nailPrices = Price::all();
-        return view('public.nails', 
-        [
-            'nailTypes' => $nailTypes,
-            'nailSizes' => $nailSizes,
-            'nailPrices' => $nailPrices,
-        ]);
-    }
-
-    public function eyelashes()
-    {
-        return view('public.eyelashes');
     }
     
     public function contact()
