@@ -5,10 +5,10 @@
     </p>
     <div class="container">
     <div class="d-table m-auto mt-5">
-      <div class="d-flex text-center p-3 table-box">
+      <div class="d-flex text-center p-3 table-box row">
         @foreach($nailTypes as $Types)
-        <div class="col">
-          <table class="card " style="width: 18rem;">
+        <div class="col p-1">
+          <table class="card m-auto" style="width: 18rem;">
             <img src="{{$Types->img_place}}" class="card-img-top u-image u-image-circle u-image-1" alt="{{$Types->type}}">
             <thead class="d-flex justify-content-center">
               <tr>
@@ -16,26 +16,32 @@
                 <th class="card-title">{{$Types->type}}</th>
               </tr>
             </thead>
-            @foreach($Types->sizes as $Size)
-              @if($Size->size)
+            @if($Types->sizes->first() != '')
+              @foreach($Types->sizes as $Size)
                 <tbody class="shadow p-4 bg-body-primery rounded-bottom d-flex justify-content-center">
                   <tr class="u-align-center">
-                    <td class="u-align-left u-text u-text-palette-4-base px-4">{{$Size->size}} - {{$Size->amount}}</td>
-
+                      <td class="u-align-left u-text u-text-palette-4-base px-4"> {{$Size->size}} -
+                      @foreach($Size->prices as $Price)
+                        {{$Price->pivot}} Ft.
+                      @endforeach 
+                      
+                      </td>
                   </tr>
                 </tbody>
-                @else
-                @foreach($Types->opps as $Opp)
-
+              @endforeach
+            @else 
+              @foreach($Types->opps as $Opp)
                 <tbody class="shadow p-4 bg-body-primery rounded-bottom d-flex justify-content-center">
                   <tr class="u-align-center">
-                    <td class="u-align-left u-text u-text-palette-4-base px-4">{{$Opp->option}} - {{$Size->amount}}</td>
+                    <td class="u-align-center u-text u-text-palette-4-base px-4"> {{$Opp->option}} - 
+                      @foreach($Opp->prices as $Price)
+                        {{$Price->amount}} Ft.
+                      @endforeach 
+                    </td>
                   </tr>
                 </tbody>
-                @endforeach
-              @endif
-            @endforeach
-              
+              @endforeach
+            @endif
             </div>
           </table>
         </div>
@@ -43,31 +49,7 @@
       </div>
     </div>
     </div>
-    <!--
-@foreach($nailTypes as $Types)
-        <div class="col">
-          <table class="card " style="width: 18rem;">
-            <img src="{{$Types->pic_place}}" class="card-img-top u-image u-image-circle u-image-1" alt="...">
-            <thead class="d-flex justify-content-center">
-              <tr>
-                <th></th>
-                <th class="card-title">{{$Types->type}}</th>
-              </tr>
-            </thead>
-              @foreach($Types->opps as $Opp)
-              <tbody class="shadow p-4 bg-body-primery rounded-bottom d-flex justify-content-center">
-                <tr class="u-align-center">
-                  <td class="u-align-left u-text u-text-palette-4-base px-4">{{$Opp->option}}</td>
-                
-                </tr>
-                
-              </tbody>
-              @endforeach
-            </div>
-          </table>
-        </div>
-        @endforeach
-      -->
+    
     <a href="#" class="fixedbutton">
       <i class="bi bi-arrow-up-circle-fill " id="fixedbutton"></i>
     </a>
